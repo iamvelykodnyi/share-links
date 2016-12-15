@@ -1,7 +1,7 @@
 {
   "name": "social-media-links",
   "version": "0.0.0",
-  "description": "Foundation of project",
+  "description": "Customized Social Media links",
   "main": "index.js",
   "scripts": {
     "build": "gulp clean --env production && gulp --env production",
