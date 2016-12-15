@@ -1,0 +1,50 @@
+{
+  "name": "social-media-links",
+  "version": "0.0.0",
+  "description": "Foundation of project",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp clean --env production && gulp --env production",
+    "start": "gulp clean && gulp watch",
+    "test": "npm run build && gulp server --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svelykodnyi/social-media-links.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Sergii Velykodnyi",
+    "email": "sergii.velykodnyi@gmail.com",
+    "url": "http://sergii.velykodnyi.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svelykodnyi/social-media-links/issues"
+  },
+  "homepage": "https://github.com/svelykodnyi/social-media-links#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.4",
+    "babel-core": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "browser-sync": "^2.18.5",
+    "del": "^2.2.2",
+    "eyeglass": "^1.2.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-data": "^1.2.1",
+    "gulp-environments": "^0.1.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "normalize-scss": "^6.0.0",
+    "sass-mq": "^3.3.1"
+  }
+}

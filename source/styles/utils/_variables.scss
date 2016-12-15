@@ -1,0 +1,63 @@
+/// Palette colors.
+/// ============================================================================
+$color-white:       #fff;
+$color-light:       #f8f8f8;
+$color-gray-light:  #e5e5e5;
+$color-gray:        #999;
+$color-gray-dark:   #4c4c4c;
+$color-dark:        #262626;
+$color-black:       #000;
+
+$color-primary:     #44a2e5;
+$color-accent:      #d84745;
+
+$color-success:     #76b041;
+$color-info:        $color-primary;
+$color-warning:     #ffc914;
+$color-danger:      $color-accent;
+
+/// Typography.
+/// ============================================================================
+$font-base: Arial, Ubuntu, Liberation Sans, Roboto, sans-serif;
+$font-title: 'PT Serif', Georgia, FreeSerif, serif;
+$font-mono: 'Fira Code', 'Ubuntu Mono', 'Courier New', 'Cutive Mono', monospace;
+$font-logo: $font-title;
+
+$font-size-factor: 1.125;
+$font-size-m: 1rem;
+$font-line-height: 1.5;
+
+$font-size-s: $font-size-m / $font-size-factor;
+$font-size-xs: $font-size-s / $font-size-factor;
+$font-size-xxs: $font-size-xs / $font-size-factor;
+
+$font-size-l: $font-size-m * $font-size-factor;
+$font-size-xl: $font-size-l * $font-size-factor;
+$font-size-xxl: $font-size-xl * $font-size-factor;
+$font-size-xxxl: $font-size-xxl * $font-size-factor;
+
+/// breakpoints.
+/// ============================================================================
+$mq-breakpoints: (
+  xs: 480px,
+  sm: 768px,
+  md: 980px,
+  lg: 1200px,
+  xl: 1600px,
+);
+
+/// Layout.
+/// ============================================================================
+$spacing: $font-line-height * 1rem;
+$spacing-half: $spacing / 2;
+$spacing-double: $spacing * 2;
+$spacing-triple: $spacing * 3;
+
+$container: map-get($mq-breakpoints, lg);
+$gutter: 15px;
+$column: 70px;
+
+/// Miscellaneous
+/// ============================================================================
+$duration: .3s;
+$radius: 3px;

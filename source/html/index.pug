@@ -1,0 +1,10 @@
+extends layout/default
+
+block vars
+  - var bodyClasses = []
+  - var pageClasses = ['layout-page', 'js-page']
+
+block header
+  .brand
+    h1.site-title= name
+    p.site-description= description

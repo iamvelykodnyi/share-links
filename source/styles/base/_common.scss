@@ -1,0 +1,75 @@
+@include normalize;
+
+html {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  height: 100vh;
+}
+
+a {
+  @include link-style;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+b,
+strong {
+  color: $color-dark;
+  font-weight: 700;
+}
+
+pre {
+  white-space: pre;
+  word-wrap: break-word;
+
+  code {
+    display: block;
+    padding: 1.3em .65em;
+    border-radius: $radius;
+    background-color: rgba($color-gray-light, .3);
+    color: $color-dark;
+    font-family: $font-mono;
+    font-size: $font-size-xs;
+    overflow-x: auto;
+  }
+}
+
+blockquote {
+  margin: 0 0 1em;
+  padding: .65em .65em .65em 1.3em;
+  border-left: 3px solid rgba($color-gray-light, .75);
+  font-size: $font-size-s;
+  font-style: italic;
+
+  p {
+    margin: 0;
+  }
+}
+
+
+p,
+li {
+  & > code {
+    padding: .2em .25em;
+    border-radius: 3px;
+    background-color: rgba($color-gray-light, .3);
+    font-size: .9em;
+  }
+}

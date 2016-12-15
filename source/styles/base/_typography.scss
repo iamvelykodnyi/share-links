@@ -1,0 +1,54 @@
+html {
+  font-size: 18px;
+
+  @include mq(sm) {
+    font-size: 21px;
+  }
+}
+
+body {
+  color: $color-dark;
+  font-family: $font-base;
+  font-size: $font-size-m;
+  font-weight: 400;
+  line-height: $font-line-height;
+}
+
+p,
+ul,
+ol {
+  margin-top: $spacing;
+  margin-bottom: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  margin: $spacing-double 0 0;
+  font-family: $font-title;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: $font-size-xxxl;
+}
+
+h2 {
+  font-size: $font-size-xxl;
+}
+
+h3 {
+  font-size: $font-size-xl;
+}
+
+h4 {
+  font-size: $font-size-l;
+}
+
+small {
+  font-size: $font-size-s;
+}
