@@ -1,0 +1,23 @@
+.share {
+  display: flex;
+  padding: $spacing-half 0;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 ($gutter / 2);
+    border: 2px solid $color-primary;
+    border-radius: $radius;
+    text-decoration: none;
+  }
+
+  &__icon {
+    display: block;
+    margin-right: ($gutter / 2);
+  }
+
+  &__text {
+    display: block;
+  }
+}

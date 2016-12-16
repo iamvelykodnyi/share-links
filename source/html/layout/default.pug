@@ -1,16 +1,17 @@
 doctype html
 html(lang="en")
-  block vars
-    - var bodyClasses = []
-    - var pageClasses = []
+    block vars
+        - var bodyClasses = []
+        - var pageClasses = []
 
-  head
+    head
     include ../parts/head.pug
 
-  body(class=bodyClasses)
-    div(class=pageClasses)
-      block header
-      block content
-      block footer
-      block scripts
-        script(src="scripts/main.js")
+    body(class=bodyClasses)
+        include ../parts/icons.pug
+        div(class=pageClasses)
+            block header
+            block content
+            block footer
+            block scripts
+                script(src="scripts/main.js")

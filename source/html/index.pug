@@ -1,10 +1,14 @@
 extends layout/default
 
 block vars
-  - var bodyClasses = []
-  - var pageClasses = ['layout-page', 'js-page']
+    - var bodyClasses = []
+    - var pageClasses = ['layout-page', 'js-page']
 
 block header
-  .brand
-    h1.site-title= name
-    p.site-description= description
+    .brand
+        h1.site-title= name
+        p.site-description= description
+        .share
+            a.share__link(href="#" data-type="facebook")
+                |<svg class="share__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
+                span.share__text Share
