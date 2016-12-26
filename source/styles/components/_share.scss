@@ -1,23 +1,68 @@
 .share {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: $spacing-half 0;
+  font-size: $font-size-s;
 
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &__link {}
+
+  &__count {
+    display: inline-block;
+    position: relative;
+    margin-left: ($gutter / 2);
     padding: 0 ($gutter / 2);
-    border: 2px solid $color-primary;
+    border: 1px solid $color-primary;
     border-radius: $radius;
-    text-decoration: none;
-  }
+    color: $color-primary;
 
-  &__icon {
-    display: block;
-    margin-right: ($gutter / 2);
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 0;
+      height: 0;
+      margin-top: -6px;
+      border: 6px solid;
+      content: '';
+    }
+
+    &::before {
+      margin-right: 0;
+      border-color: transparent $color-primary transparent transparent;
+    }
+
+    &::after {
+      margin-right: -1px;
+      border-color: transparent $color-white transparent transparent;
+    }
+
   }
+}
+
+.share-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 ($gutter / 2);
+  border: 1px solid $color-primary;
+  border-radius: $radius;
+  background: $color-primary;
+  color: $color-white;
+  text-decoration: none;
+
+
+  &__icon {}
 
   &__text {
-    display: block;
+    margin-left: ($gutter / 4);
+  }
+
+  &:hover {
+    border-color: $color-accent;
+    background: $color-accent;
+    color: $color-white;
   }
 }

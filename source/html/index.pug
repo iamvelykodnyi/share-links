@@ -9,6 +9,7 @@ block header
         h1.site-title= name
         p.site-description= description
         .share
-            a.share__link(href="#" data-type="facebook")
-                |<svg class="share__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
-                span.share__text Share
+            a.share__link.share-link.js-share-link(href="#" data-type="facebook")
+                |<svg class="share-link__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
+                span.share-link__text Share
+            span.share__count.js-share-count-facebook
