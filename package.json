@@ -1,7 +1,7 @@
 {
-  "name": "social-media-links",
+  "name": "share-links",
   "version": "0.0.0",
-  "description": "Customized Social Media links",
+  "description": "Customized Social Media sharing links",
   "main": "index.js",
   "scripts": {
     "build": "gulp clean --env production && gulp --env production",
