@@ -1,3 +1,3 @@
 # Share links
 
-Customized Share links
+Customized sharing links

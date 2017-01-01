@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {{> head }}
+    </head>
+    <body>
+        <div class="brand">
+            <h1 class="site-title">{{ name }}</h1>
+            <p class="site-description">{{ description }}</p>
+            <div class="share">
+                <a class="share__link share-link js-share-link" href="#" data-service="facebook">
+                    <svg class="share-link__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
+                    <span class="share-link__text">Share</span>
+                </a>
+                <span class="share__count js-share-count-facebook" data-service="facebook">0</span>
+            </div>
+        </div>
+        {{> icons }}
+    </body>
+</html>

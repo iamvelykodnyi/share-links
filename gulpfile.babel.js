@@ -10,23 +10,22 @@
 
 import autoprefixer from 'autoprefixer';
 import babel from 'gulp-babel';
-import bs from 'browser-sync';
 import browserify from 'browserify';
+import bs from 'browser-sync';
 import buffer from 'vinyl-buffer';
 import cssnano from 'gulp-cssnano';
-import data from 'gulp-data';
 import del from 'del';
 import environments from 'gulp-environments';
 import eyeglass from 'eyeglass';
 import gulp from 'gulp';
+import gutil from 'gulp-util';
+import hb from 'gulp-hb';
 import imagemin from 'gulp-imagemin';
-import source from 'vinyl-source-stream';
 import postcss from 'gulp-postcss';
-import pug from 'gulp-pug';
 import sass from 'gulp-sass';
+import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
-import gutil from 'gulp-util';
 
 const development = environments.development;
 const production = environments.production;
@@ -40,7 +39,7 @@ const sourceDir = 'source';
 const buildDir = development() ? 'app' : 'build';
 // Path to the source files.
 const sourcePaths = {
-  html: `${sourceDir}/html/*.{pug,html,md}`,
+  html: `${sourceDir}/html/**/*.html`,
   images: `${sourceDir}/images/**/*.{png,jpg,svg}`,
   scripts: `${sourceDir}/scripts/**/*.js`,
   mainScript: `${sourceDir}/scripts/main.js`,
@@ -68,9 +67,9 @@ const bsOptions = {
 // Task: HTML. =================================================================
 gulp.task('html', () =>
   gulp.src(sourcePaths.html)
-    .pipe(data(() => site))
-    .pipe(pug({
-      pretty: development() ? true : false
+    .pipe(hb({
+      partials: `${sourceDir}/html/parts/*.hbs`,
+      data: site
     }))
     .pipe(gulp.dest(buildDir))
 );
@@ -123,7 +122,7 @@ gulp.task('watch', ['default'], () => {
   gulp.watch(sourcePaths.styles, ['styles']);
   gulp.watch(sourcePaths.images, ['images']);
   gulp.watch(sourcePaths.scripts, ['scripts']);
-  gulp.watch(`${sourceDir}/html/**/*.pug`, ['html']);
+  gulp.watch(`${sourceDir}/html/**/*.{html,hbs}`, ['html']);
 });
 
 // Task: server. ===============================================================

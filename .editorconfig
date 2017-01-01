@@ -13,5 +13,5 @@ trim_trailing_whitespace = true
 [*.{md,pug}]
 trim_trailing_whitespace = false
 
-[*.pug]
+[*.{hbs,html}]
 indent_size = 4
