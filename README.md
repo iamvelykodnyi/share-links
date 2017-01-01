@@ -1,3 +1,3 @@
-# Social Media links
+# Share links
 
-Customized Social Media links
+Customized Share links

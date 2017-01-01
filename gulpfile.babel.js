@@ -90,21 +90,21 @@ gulp.task('styles', () =>
 );
 
 // Task: scripts. ==============================================================
-gulp.task('scripts', () => {
-  let b = browserify({
+gulp.task('scripts', () =>
+  browserify({
     entries: sourcePaths.mainScript,
     debug: true
-  });
-  return b.bundle()
-    .pipe(source('main.js'))
-    .pipe(buffer())
-    .pipe(development(sourcemaps.init()))
-    .pipe(babel({ presets: ['es2015'] }))
-    .pipe(production(uglify()))
-    .on('error', gutil.log)
-    .pipe(development(sourcemaps.write()))
-    .pipe(gulp.dest(`${buildDir}/scripts`));
-});
+  })
+  .bundle()
+  .pipe(source('main.js'))
+  .pipe(buffer())
+  .pipe(development(sourcemaps.init()))
+  .pipe(babel({ presets: ['es2015'] }))
+  .pipe(production(uglify()))
+  .on('error', gutil.log)
+  .pipe(development(sourcemaps.write()))
+  .pipe(gulp.dest(`${buildDir}/scripts`))
+);
 
 // Task: scripts. ==============================================================
 gulp.task('images', () =>
