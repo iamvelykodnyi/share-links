@@ -11,7 +11,8 @@
 import autoprefixer from 'autoprefixer';
 import babel from 'gulp-babel';
 import bs from 'browser-sync';
-import concat from 'gulp-concat';
+import browserify from 'browserify';
+import buffer from 'vinyl-buffer';
 import cssnano from 'gulp-cssnano';
 import data from 'gulp-data';
 import del from 'del';
@@ -19,12 +20,13 @@ import environments from 'gulp-environments';
 import eyeglass from 'eyeglass';
 import gulp from 'gulp';
 import imagemin from 'gulp-imagemin';
-import plumber from 'gulp-plumber';
+import source from 'vinyl-source-stream';
 import postcss from 'gulp-postcss';
 import pug from 'gulp-pug';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
+import gutil from 'gulp-util';
 
 const development = environments.development;
 const production = environments.production;
@@ -41,6 +43,7 @@ const sourcePaths = {
   html: `${sourceDir}/html/*.{pug,html,md}`,
   images: `${sourceDir}/images/**/*.{png,jpg,svg}`,
   scripts: `${sourceDir}/scripts/**/*.js`,
+  mainScript: `${sourceDir}/scripts/main.js`,
   styles: `${sourceDir}/styles/**/*.scss`
 };
 
@@ -65,7 +68,6 @@ const bsOptions = {
 // Task: HTML. =================================================================
 gulp.task('html', () =>
   gulp.src(sourcePaths.html)
-    .pipe(plumber())
     .pipe(data(() => site))
     .pipe(pug({
       pretty: development() ? true : false
@@ -76,7 +78,6 @@ gulp.task('html', () =>
 // Task: styles. ===============================================================
 gulp.task('styles', () =>
   gulp.src(sourcePaths.styles)
-    .pipe(plumber())
     .pipe(development(sourcemaps.init()))
     .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
     .pipe(postcss([
@@ -89,16 +90,21 @@ gulp.task('styles', () =>
 );
 
 // Task: scripts. ==============================================================
-gulp.task('scripts', () =>
-  gulp.src(sourcePaths.scripts)
-    .pipe(plumber())
+gulp.task('scripts', () => {
+  let b = browserify({
+    entries: sourcePaths.mainScript,
+    debug: true
+  });
+  return b.bundle()
+    .pipe(source('main.js'))
+    .pipe(buffer())
     .pipe(development(sourcemaps.init()))
-    .pipe(concat('main.js'))
     .pipe(babel({ presets: ['es2015'] }))
-    .pipe(development(sourcemaps.write()))
     .pipe(production(uglify()))
-    .pipe(gulp.dest(`${buildDir}/scripts`))
-);
+    .on('error', gutil.log)
+    .pipe(development(sourcemaps.write()))
+    .pipe(gulp.dest(`${buildDir}/scripts`));
+});
 
 // Task: scripts. ==============================================================
 gulp.task('images', () =>
