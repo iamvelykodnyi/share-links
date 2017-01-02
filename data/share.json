@@ -1,0 +1,31 @@
+[
+  {
+    "id": "twitter",
+    "name": "Twitter",
+    "text": "Tweet"
+  },
+  {
+    "id": "facebook",
+    "name": "Facebook",
+    "text": "Share",
+    "url": ""
+  },
+  {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "text": "Share",
+    "url": ""
+  },
+  {
+    "id": "pinterest",
+    "name": "Pinterest",
+    "text": "Save",
+    "url": ""
+  },
+  {
+    "id": "google",
+    "name": "Google+",
+    "text": "Share",
+    "url": ""
+  }
+]

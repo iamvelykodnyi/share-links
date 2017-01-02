@@ -30,9 +30,6 @@ import uglify from 'gulp-uglify';
 const development = environments.development;
 const production = environments.production;
 
-// Data.
-import { site } from './config/data.json';
-
 // Paths to the source folder.
 const sourceDir = 'source';
 // Path to the build folder.
@@ -69,7 +66,7 @@ gulp.task('html', () =>
   gulp.src(sourcePaths.html)
     .pipe(hb({
       partials: `${sourceDir}/html/parts/*.hbs`,
-      data: site
+      data: 'data/*.json'
     }))
     .pipe(gulp.dest(buildDir))
 );

@@ -1,20 +1,49 @@
 <!doctype html>
 <html lang="en">
     <head>
-        {{> head }}
+        {{> head}}
     </head>
     <body>
         <div class="brand">
-            <h1 class="site-title">{{ name }}</h1>
-            <p class="site-description">{{ description }}</p>
-            <div class="share">
-                <a class="share__link share-link js-share-link" href="#" data-service="facebook">
-                    <svg class="share-link__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
-                    <span class="share-link__text">Share</span>
+            <h1 class="site-title">{{ site.name }}</h1>
+            <p class="site-description">{{ site.description }}</p>
+
+            <ul class="share">
+            {{#each share}}
+                <li class="share__item">
+                    <a class="share__link share__link_{{id}} js-share-link"
+                        href="#"
+                        title=" Share this on {{name}}"
+                        data-service="{{id}}">
+                        <svg class="share__icon"><use xlink:href="#icon-{{id}}"></use></svg>
+                    </a>
+                </li>
+            {{/each}}
+            </ul>
+
+            <ul class="share">
+            {{#each share}}
+                <li class="share__item">
+                    <a class="share__link share__link_{{id}} js-share-link"
+                        href="#"
+                        title=" Share this on {{name}}"
+                        data-service="{{id}}">
+                        <svg class="share__icon"><use xlink:href="#icon-{{id}}"></use></svg>
+                        <span class="share__text">{{text}}</span>
+                    </a>
+                </li>
+            {{/each}}
+            </ul>
+
+            <!--<div class="share">
+                <a class="share__link js-share-link" href="#" data-service="facebook">
+                    <svg class="share__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
+                    <span class="share__text">Share</span>
                 </a>
-                <span class="share__count js-share-count-facebook" data-service="facebook">0</span>
-            </div>
+                <span class="share__count js-share-count" data-service="facebook">0</span>
+            </div>-->
         </div>
-        {{> icons }}
+        {{> icons}}
+        <script src="scripts/main.js"></script>
     </body>
 </html>

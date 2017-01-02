@@ -1,31 +1,31 @@
 <meta charset="UTF-8">
 <meta name="viewport", content="width=device-width, initial-scale=1">
 
-<title>{{name}}</title>
+<title>{{site.title}}</title>
 
-<meta name="description" content="{{description}}">
+<meta name="description" content="{{site.description}}">
 
 {{! Schema.org markup  Google. }}
-<meta itemprop="name" content="{{name}}">
-<meta itemprop="description" content="{{description}}">
-<meta itemprop="image" content="{{url}}{{image}}">
+<meta itemprop="name" content="{{site.title}}">
+<meta itemprop="description" content="{{site.description}}">
+<meta itemprop="image" content="{{site.url}}{{site.image}}">
 
 {{! Twitter Card markup. }}
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="{{name}}">
-<meta name="twitter:title" content="{{name}}">
-<meta name="twitter:description" content={{description}}>
+<meta name="twitter:site" content="{{site.title}}">
+<meta name="twitter:title" content="{{site.title}}">
+<meta name="twitter:description" content={{site.description}}>
 {{! meta name="twitter:creator" content=author> }}
-<meta name="twitter:image" content="{{url}}{{image}}">
-<meta name="twitter:image:alt" content="{{description}}">
+<meta name="twitter:image" content="{{site.url}}{{site.image}}">
+<meta name="twitter:image:alt" content="{{site.description}}">
 
 {{! Open Graph markup  Facebook, Pinterest }}
-<meta property="og:title" content="{{name}}">
+<meta property="og:title" content="{{site.title}}">
 <meta property="og:type" content="article">
-<meta property="og:url" content={{url}}>
-<meta property="og:image" content="{{url}}{{image}}">
-<meta property="og:description" content="{{description}}">
-<meta property="og:site_name" content="{{name}}">
+<meta property="og:url" content={{site.url}}>
+<meta property="og:image" content="{{site.url}}{{site.image}}">
+<meta property="og:description" content="{{site.description}}">
+<meta property="og:site_name" content="{{site.title}}">
 
 {{! CSS. }}
 <link href="styles/main.css", rel='stylesheet'>

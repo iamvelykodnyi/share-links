@@ -1,11 +1,102 @@
+$radius: 3px;
+$color-facebook: #4267b2;
+$color-google: #db4437;
+$color-linkedin: #0077b5;
+$color-pinterest: #bd081c;
+$color-twitter: #1b95e0;
+
 .share {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
   padding: $spacing-half 0;
   font-size: $font-size-s;
+  list-style: none;
 
-  &__link {}
+  &__item {
+    margin: 0;
+    padding: ($gutter / 2);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: ($gutter / 2);
+    border: 1px solid $color-primary;
+    border-radius: $radius;
+    background: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &_facebook {
+      border-color: $color-facebook;
+      background-color: $color-facebook;
+
+      &:hover {
+        border-color: shade($color-facebook, 20%);
+        background: shade($color-facebook, 20%);
+      }
+    }
+
+    &_twitter {
+      background-color: $color-twitter;
+      border-color: $color-twitter;
+
+      &:hover {
+        border-color: shade($color-twitter, 20%);
+        background: shade($color-twitter, 20%);
+      }
+    }
+
+    &_linkedin {
+      background-color: $color-linkedin;
+      border-color: $color-linkedin;
+
+      &:hover {
+        border-color: shade($color-linkedin, 20%);
+        background: shade($color-linkedin, 20%);
+      }
+    }
+
+    &_pinterest {
+      background-color: $color-pinterest;
+      border-color: $color-pinterest;
+
+      &:hover {
+        border-color: shade($color-pinterest, 20%);
+        background: shade($color-pinterest, 20%);
+      }
+    }
+
+    &_google {
+      background-color: $color-google;
+      border-color: $color-google;
+
+      &:hover {
+        border-color: shade($color-google, 20%);
+        background: shade($color-google, 20%);
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+
+  &__text {
+    margin-left: ($gutter / 4);
+    line-height: 1;
+    font-size: $font-size-xs;
+  }
 
   &__count {
     display: inline-block;
@@ -39,30 +130,5 @@
       border-color: transparent $color-white transparent transparent;
     }
 
-  }
-}
-
-.share-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 ($gutter / 2);
-  border: 1px solid $color-primary;
-  border-radius: $radius;
-  background: $color-primary;
-  color: $color-white;
-  text-decoration: none;
-
-
-  &__icon {}
-
-  &__text {
-    margin-left: ($gutter / 4);
-  }
-
-  &:hover {
-    border-color: $color-accent;
-    background: $color-accent;
-    color: $color-white;
   }
 }

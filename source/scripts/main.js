@@ -1,55 +1,16 @@
 const options = require('./modules/popup-options');
 
-const useCounters = true;
+// const useCounters = false;
 // const testUrl = 'http://www.udemy.com/pianoforall-incredible-new-way-to-learn-piano-keyboard/';
-const url = window.location.origin + window.location.pathname;
+// const url = window.location.origin + window.location.pathname;
 let shareLinks = Array.from(document.getElementsByClassName('js-share-link'));
-
-// Counters
-let facebookCounter = document.querySelector('.js-share-count-facebook');
-facebookCounter.textContent = '0';
-
-let setCounter = {
-  facebook(url) {
-    return new Promise((resolve, reject) => {
-      let req = new XMLHttpRequest();
-      req.open('GET', `http://graph.facebook.com/?id=${url}`);
-
-      req.onload = function() {
-        if (req.status == 200) {
-          let response = JSON.parse(req.responseText);
-          resolve(response);
-        }
-        else {
-          reject(Error(req.statusText));
-        }
-      };
-
-      req.onerror = function() {
-        reject(Error('Network Error'));
-      };
-
-      req.send();
-    });
-  }
-};
-
-setCounter
-  .facebook(url)
-  .then(response => {
-    if (response.hasOwnProperty('share') &&
-    response.share.hasOwnProperty('share_count')) {
-      facebookCounter.textContent = response.share.share_count;
-    }
-  })
-  .catch(error => window.console.error('Failed!', error));
 
 let handleOpenPopup = event => {
   event.preventDefault();
   event.stopPropagation();
   let shareLink = event.target.closest('.share__link');
-  let servise = shareLink.dataset.servise;
-  let params = options[servise];
+  let service = shareLink.dataset.service;
+  let params = options[service];
   let name = params.name;
   let width = params.width;
   let height = params.height;
@@ -57,7 +18,7 @@ let handleOpenPopup = event => {
   let top = Math.round(screen.height / 2 - height / 2);
 
   let popup = window.open(
-    params.url + url,
+    params.url,
     name,
     `
       left=${left},
@@ -73,18 +34,18 @@ let handleOpenPopup = event => {
   if (popup) {
     popup.focus();
     // Do set counters if they are using.
-    if (useCounters) {
-      let timer = setInterval(function() {
-        if (popup.closed) {
-          if (setCounter.hasOwnProperty(servise)) {
-            setTimeout(function() {
-              setCounter[servise](url);
-            }, 500);
-          }
-          clearInterval(timer);
-        }
-      }, 1000);
-    }
+    // if (useCounters) {
+    //   let timer = setInterval(function() {
+    //     if (popup.closed) {
+    //       if (setCounter.hasOwnProperty(service)) {
+    //         setTimeout(function() {
+    //           setCounter[service](url);
+    //         }, 500);
+    //       }
+    //       clearInterval(timer);
+    //     }
+    //   }, 1000);
+    // }
   }
 };
 
