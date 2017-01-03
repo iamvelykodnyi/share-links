@@ -38,7 +38,7 @@ const sourcePaths = {
   html: `${sourceDir}/html/**/*.html`,
   images: `${sourceDir}/images/**/*.{png,jpg,svg}`,
   scripts: `${sourceDir}/scripts/**/*.js`,
-  mainScript: `${sourceDir}/scripts/share.js`,
+  shareScript: `${sourceDir}/scripts/share/index.js`,
   styles: `${sourceDir}/styles/**/*.scss`
 };
 
@@ -87,7 +87,7 @@ gulp.task('styles', () =>
 // Task: scripts. ==============================================================
 gulp.task('scripts', () =>
   browserify({
-    entries: sourcePaths.mainScript,
+    entries: sourcePaths.shareScript,
     debug: true
   })
   .transform(
@@ -95,7 +95,7 @@ gulp.task('scripts', () =>
     { presets: ['es2015'] }
   )
   .bundle()
-  .pipe(source('main.js'))
+  .pipe(source('share.js'))
   .pipe(buffer())
   .pipe(development(sourcemaps.init()))
   .pipe(production(uglify()))

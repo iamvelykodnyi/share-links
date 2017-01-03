@@ -27,19 +27,19 @@ module.exports = (function () {
       'https://twitter.com/intent/tweet?url={url}&text={title}',
       'Twitter',
       600,
-      450
+      300
     ),
     facebook: new Option(
       'https://www.facebook.com/sharer/sharer.php?u={url}',
       'Facebook',
-      600,
-      500
+      660,
+      640
     ),
     vkontakte: new Option(
       'https://vk.com/share.php?url={url}',
       'Vkontakte',
-      550,
-      330
+      650,
+      570
     ),
     linkedin: new Option(
       'https://www.linkedin.com/shareArticle?url={url}',
@@ -57,7 +57,7 @@ module.exports = (function () {
       'https://plus.google.com/share?url={url}',
       'Google',
       400,
-      450
+      440
     )
   };
 }());
