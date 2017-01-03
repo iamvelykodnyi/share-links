@@ -1,5 +1,4 @@
 app/
-build/
 node_modules/
 .eyeglass_cache/
 *.log
