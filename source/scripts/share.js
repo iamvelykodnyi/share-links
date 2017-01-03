@@ -1,4 +1,4 @@
-const options = require('./modules/popup-options');
+const options = require('./share_modules/popup-options');
 
 // const useCounters = false;
 // const testUrl = 'http://www.udemy.com/pianoforall-incredible-new-way-to-learn-piano-keyboard/';

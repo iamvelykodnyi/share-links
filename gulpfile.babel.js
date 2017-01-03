@@ -9,7 +9,6 @@
 'use strict';
 
 import autoprefixer from 'autoprefixer';
-import babel from 'gulp-babel';
 import browserify from 'browserify';
 import bs from 'browser-sync';
 import buffer from 'vinyl-buffer';
@@ -39,7 +38,7 @@ const sourcePaths = {
   html: `${sourceDir}/html/**/*.html`,
   images: `${sourceDir}/images/**/*.{png,jpg,svg}`,
   scripts: `${sourceDir}/scripts/**/*.js`,
-  mainScript: `${sourceDir}/scripts/main.js`,
+  mainScript: `${sourceDir}/scripts/share.js`,
   styles: `${sourceDir}/styles/**/*.scss`
 };
 
@@ -91,11 +90,14 @@ gulp.task('scripts', () =>
     entries: sourcePaths.mainScript,
     debug: true
   })
+  .transform(
+    'babelify',
+    { presets: ['es2015'] }
+  )
   .bundle()
   .pipe(source('main.js'))
   .pipe(buffer())
   .pipe(development(sourcemaps.init()))
-  .pipe(babel({ presets: ['es2015'] }))
   .pipe(production(uglify()))
   .on('error', gutil.log)
   .pipe(development(sourcemaps.write()))

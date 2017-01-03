@@ -3,12 +3,12 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: $spacing-half 0;
+  padding: $spacing 0;
   list-style: none;
 
   &__item {
     margin: 0;
-    padding: $gutter;
+    padding: $gutter-half;
   }
 
   &__link {
