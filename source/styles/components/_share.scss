@@ -1,9 +1,20 @@
 $radius: 3px;
-$color-facebook: #4267b2;
-$color-google: #db4437;
-$color-linkedin: #0077b5;
-$color-pinterest: #bd081c;
-$color-twitter: #1b95e0;
+$color-facebook: #3b5998 !default;
+$color-vkontakte: #45668e !default;
+$color-google: #dd4b39 !default;
+$color-linkedin: #0077b5 !default;
+$color-pinterest: #bd081c !default;
+$color-twitter: #1da1f2 !default;
+
+@mixin brand-color($color) {
+  border-color: $color;
+  background-color: $color;
+
+  &:hover {
+    border-color: tint($color, 15%);
+    background: tint($color, 15%);
+  }
+}
 
 .share {
   display: flex;
@@ -34,54 +45,28 @@ $color-twitter: #1b95e0;
       color: $color-white;
     }
 
-    &_facebook {
-      border-color: $color-facebook;
-      background-color: $color-facebook;
-
-      &:hover {
-        border-color: shade($color-facebook, 20%);
-        background: shade($color-facebook, 20%);
-      }
+    &_twitter {
+      @include brand-color($color-twitter);
     }
 
-    &_twitter {
-      background-color: $color-twitter;
-      border-color: $color-twitter;
+    &_facebook {
+      @include brand-color($color-facebook);
+    }
 
-      &:hover {
-        border-color: shade($color-twitter, 20%);
-        background: shade($color-twitter, 20%);
-      }
+    &_vkontakte {
+      @include brand-color($color-vkontakte);
     }
 
     &_linkedin {
-      background-color: $color-linkedin;
-      border-color: $color-linkedin;
-
-      &:hover {
-        border-color: shade($color-linkedin, 20%);
-        background: shade($color-linkedin, 20%);
-      }
+      @include brand-color($color-linkedin);
     }
 
     &_pinterest {
-      background-color: $color-pinterest;
-      border-color: $color-pinterest;
-
-      &:hover {
-        border-color: shade($color-pinterest, 20%);
-        background: shade($color-pinterest, 20%);
-      }
+      @include brand-color($color-pinterest);
     }
 
     &_google {
-      background-color: $color-google;
-      border-color: $color-google;
-
-      &:hover {
-        border-color: shade($color-google, 20%);
-        background: shade($color-google, 20%);
-      }
+      @include brand-color($color-google);
     }
   }
 

@@ -7,25 +7,26 @@
   {
     "id": "facebook",
     "name": "Facebook",
-    "text": "Share",
-    "url": ""
+    "text": "Share"
+  },
+  {
+    "id": "vkontakte",
+    "name": "Vkontakte",
+    "text": "Save"
   },
   {
     "id": "linkedin",
     "name": "LinkedIn",
-    "text": "Share",
-    "url": ""
+    "text": "Share"
   },
   {
     "id": "pinterest",
     "name": "Pinterest",
-    "text": "Save",
-    "url": ""
+    "text": "Save"
   },
   {
     "id": "google",
     "name": "Google+",
-    "text": "Share",
-    "url": ""
+    "text": "Share"
   }
 ]

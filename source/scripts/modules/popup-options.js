@@ -23,17 +23,23 @@ module.exports = (function () {
   }
 
   return {
+    twitter: new Option(
+      'https://twitter.com/intent/tweet?url={url}&text={title}',
+      'Twitter',
+      600,
+      450
+    ),
     facebook: new Option(
       'https://www.facebook.com/sharer/sharer.php?u={url}',
       'Facebook',
       600,
       500
     ),
-    twitter: new Option(
-      'https://twitter.com/intent/tweet?url={url}&text={title}',
-      'Twitter',
-      600,
-      450
+    vkontakte: new Option(
+      'https://vk.com/share.php?url={url}',
+      'Vkontakte',
+      550,
+      330
     ),
     linkedin: new Option(
       'https://www.linkedin.com/shareArticle?url={url}',
