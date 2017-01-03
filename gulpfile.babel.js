@@ -32,7 +32,7 @@ const production = environments.production;
 // Paths to the source folder.
 const sourceDir = 'source';
 // Path to the build folder.
-const buildDir = development() ? 'app' : 'build';
+const buildDir = development() ? 'app' : 'docs';
 // Path to the source files.
 const sourcePaths = {
   html: `${sourceDir}/html/**/*.html`,
