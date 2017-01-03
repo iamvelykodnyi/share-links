@@ -1,0 +1,9 @@
+@mixin brand-color($color) {
+  border-color: $color;
+  background-color: $color;
+
+  &:hover {
+    border-color: tint($color, 15%);
+    background: tint($color, 15%);
+  }
+}

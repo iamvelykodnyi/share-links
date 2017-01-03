@@ -1,6 +1,6 @@
-@import 'utils/variables';
-@import 'utils/functions';
-@import 'utils/mixins';
+@import 'page/utils/variables';
+@import 'page/utils/functions';
+@import 'page/utils/mixins';
 
 // Libraries imports.
 // =============================================================================
@@ -9,24 +9,23 @@
 
 /* Animations.
 ============================================================================= */
-@import 'animations/fade';
+@import 'page/animations/fade';
 
 /* Common styles.
 ============================================================================= */
-@import 'base/common';
-@import 'base/typography';
+@import 'page/base/common';
+@import 'page/base/typography';
 
 /* Liyout.
 ============================================================================= */
-@import 'layout/grid';
+@import 'page/layout/grid';
 
 /* Components.
 ============================================================================= */
-@import 'components/brand';
-@import 'components/share';
-@import 'components/site-description';
-@import 'components/site-title';
+@import 'page/components/brand';
+@import 'page/components/site-description';
+@import 'page/components/site-title';
 
 /* State.
 ============================================================================= */
-@import 'state/visually-hidden';
+@import 'page/state/visually-hidden';
