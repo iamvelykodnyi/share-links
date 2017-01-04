@@ -1,7 +1,7 @@
 module.exports = (function () {
   let params = {
-    url: 'https://www.drupal.org', // window.location.origin + window.location.pathname
-    title: 'Drupal - Open Source CMS | Drupal.org' // window.document.title
+    url: window.location.origin + window.location.pathname, // 'https://www.drupal.org',
+    title: window.document.title // 'Drupal - Open Source CMS | Drupal.org'
   };
   let makeUrl = function (url, context, filter) {
     return url.replace(/\{([^}]+)}/g, (match, key) => {

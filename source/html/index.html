@@ -4,10 +4,13 @@
         {{> head}}
     </head>
     <body>
-        <div class="brand">
-            <h1 class="site-title">{{ site.title }}</h1>
-            <p class="site-description">{{ site.description }}</p>
-
+        <main class="layout-main">
+            <div class="brand">
+                <h1 class="site-title">{{ site.title }}</h1>
+                {{#if site.description}}
+                <p class="site-description">{{ site.description }}</p>
+                {{/if}}
+            </div>
             <ul class="share">
             {{#each share}}
                 <li class="share__item">
@@ -33,8 +36,6 @@
                     </a>
                 </li>
             {{/each}}
-            </ul>
-
             <!--<div class="share">
                 <a class="share__link js-share-link" href="#" data-service="facebook">
                     <svg class="share__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
@@ -42,7 +43,8 @@
                 </a>
                 <span class="share__count js-share-count" data-service="facebook">0</span>
             </div>-->
-        </div>
+            </ul>
+        </main>
         {{> icons}}
         <script src="scripts/share.js"></script>
     </body>

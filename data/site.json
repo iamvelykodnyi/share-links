@@ -1,11 +1,11 @@
 {
   "title": "Share links",
-  "description": "Customized sharing links",
-  "url": "",
-  "image": "",
+  "description": "",
+  "url": "https://iamvelykodnyi.github.io/share-links/",
+  "image": "images/meta.png",
   "author": {
     "name": "Sergii Velykodnyi",
-    "email": "sergii.velykodnyi@gmail.com",
+    "email": "iamvelykodnyi@gmail.com",
     "url": "http://sergii.velykodnyi.com"
   }
 }
