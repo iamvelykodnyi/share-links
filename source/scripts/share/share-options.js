@@ -1,26 +1,29 @@
 module.exports = (function () {
-  let params = {
+
+  class Option {
+    constructor(url, name, width, height) {
+      this._url = url;
+      this.name = name;
+      this.width = width;
+      this.height = height;
+    }
+
+    get url() {
+      return this.makeUrl(this._url, Option.params, encodeURIComponent);
+    }
+
+    makeUrl(url, params, filter) {
+      return url.replace(/\{([^}]+)}/g, (match, key) => {
+        let value = filter ? filter(params[key]) : params[key];
+        return value || '';
+      });
+    }
+  }
+
+  Option.params = {
     url: window.location.origin + window.location.pathname, // 'https://www.drupal.org',
     title: window.document.title // 'Drupal - Open Source CMS | Drupal.org'
   };
-  let makeUrl = function (url, context, filter) {
-    return url.replace(/\{([^}]+)}/g, (match, key) => {
-      let value = filter ? filter(context[key]) : context[key];
-      return value || '';
-    });
-  };
-
-  function Option(url, name, width, height) {
-    this._url = url;
-    this.name = name;
-    this.width = width;
-    this.height = height;
-    Object.defineProperty(this, 'url', {
-      get: function () {
-        return makeUrl(this._url, params, encodeURIComponent);
-      }
-    });
-  }
 
   return {
     twitter: new Option(
