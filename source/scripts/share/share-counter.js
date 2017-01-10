@@ -1,5 +1,5 @@
-module.exports = function() {
-  let facebook = function(url) {
+module.exports = {
+  facebook: url => {
     return new Promise((resolve, reject) => {
       let req = new XMLHttpRequest();
       req.open('GET', `http://graph.facebook.com/?id=${url}`);
@@ -7,7 +7,8 @@ module.exports = function() {
       req.onload = function() {
         if (req.status == 200) {
           let response = JSON.parse(req.responseText);
-          resolve(response);
+          let count = response.share && response.share.share_count || 0;
+          resolve(count);
         }
         else {
           reject(Error(req.statusText));
@@ -20,10 +21,5 @@ module.exports = function() {
 
       req.send();
     });
-  };
-
-  return {
-    facebook: facebook
-  };
-
+  }
 };

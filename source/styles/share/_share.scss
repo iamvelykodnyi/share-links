@@ -7,6 +7,8 @@
   list-style: none;
 
   &__item {
+    display: inline-flex;
+    align-items: stretch;
     margin: 0;
     padding: $gutter-half;
   }
@@ -64,37 +66,53 @@
     line-height: 1;
   }
 
-  // &__count {
-  //   display: inline-block;
-  //   position: relative;
-  //   margin-left: ($gutter / 2);
-  //   padding: 0 ($gutter / 2);
-  //   border: 1px solid;
-  //   border-radius: $radius;
-  //   color: $color-text;
+  &__counter {
+    display: inline-flex;
+    position: relative;
+    margin-left: ($gutter / 1.5);
+    padding: 0 ($gutter / 2);
+    border: 1px solid;
+    border-radius: $radius;
 
-  //   &::before,
-  //   &::after {
-  //     display: block;
-  //     position: absolute;
-  //     top: 50%;
-  //     right: 100%;
-  //     width: 0;
-  //     height: 0;
-  //     margin-top: -6px;
-  //     border: 6px solid;
-  //     content: '';
-  //   }
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 0;
+      height: 0;
+      margin-top: -6px;
+      border: 6px solid;
+      content: '';
+    }
 
-  //   &::before {
-  //     margin-right: 0;
-  //     border-color: transparent $color-primary transparent transparent;
-  //   }
+    &::before {
+      margin-right: 0;
+      border-color: transparent;
+    }
 
-  //   &::after {
-  //     margin-right: -1px;
-  //     border-color: transparent $color-bg transparent transparent;
-  //   }
+    &::after {
+      margin-right: -1px;
+      border-color: transparent;
+    }
 
-  // }
+    &_facebook {
+      color: $color-facebook;
+
+      &::before {
+        border-right-color: $color-facebook;
+      }
+
+      &::after {
+        border-right-color: $color-bg;
+      }
+    }
+
+  }
+
+  &__number {
+    display: block;
+    margin: auto;
+  }
 }

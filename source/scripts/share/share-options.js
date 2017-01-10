@@ -1,3 +1,5 @@
+import pageParams from './page-params';
+
 module.exports = (function () {
 
   class Option {
@@ -21,8 +23,8 @@ module.exports = (function () {
   }
 
   Option.params = {
-    url: window.location.origin + window.location.pathname, // 'https://www.drupal.org',
-    title: window.document.title // 'Drupal - Open Source CMS | Drupal.org'
+    url: pageParams.url(),
+    title: pageParams.title()
   };
 
   return {

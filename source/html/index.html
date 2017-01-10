@@ -11,6 +11,7 @@
                 <p class="site-description">{{ site.description }}</p>
                 {{/if}}
             </div>
+
             <ul class="share">
             {{#each share}}
                 <li class="share__item">
@@ -36,14 +37,27 @@
                     </a>
                 </li>
             {{/each}}
-            <!--<div class="share">
-                <a class="share__link js-share-link" href="#" data-service="facebook">
-                    <svg class="share__icon icon icon_facebook"><use xlink:href="#icon-facebook"></use></svg>
-                    <span class="share__text">Share</span>
-                </a>
-                <span class="share__count js-share-count" data-service="facebook">0</span>
-            </div>-->
             </ul>
+
+            <ul class="share">
+            {{#each share}}
+                <li class="share__item">
+                    <a class="share__link share__link_{{id}} js-share-link"
+                        href="#"
+                        title=" Share this on {{name}}"
+                        data-id="{{id}}">
+                        <svg class="share__icon"><use xlink:href="#icon-{{id}}"></use></svg>
+                        <span class="share__text">{{text}}</span>
+                    </a>
+                    {{#if counter}}
+                    <span class="share__counter share__counter_{{id}}">
+                        <span class="share__number js-share-number" data-id="{{id}}">0</span>
+                    </span>
+                    {{/if}}
+                </li>
+            {{/each}}
+            </ul>
+
         </main>
         {{> icons}}
         <script src="scripts/share.js"></script>

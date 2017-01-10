@@ -2,31 +2,37 @@
   {
     "id": "twitter",
     "name": "Twitter",
-    "text": "Tweet"
+    "text": "Tweet",
+    "counter": false
   },
   {
     "id": "facebook",
     "name": "Facebook",
-    "text": "Share"
+    "text": "Share",
+    "counter": true
   },
   {
     "id": "vkontakte",
     "name": "Vkontakte",
-    "text": "Save"
+    "text": "Save",
+    "counter": false
   },
   {
     "id": "linkedin",
     "name": "LinkedIn",
-    "text": "Share"
+    "text": "Share",
+    "counter": false
   },
   {
     "id": "pinterest",
     "name": "Pinterest",
-    "text": "Save"
+    "text": "Save",
+    "counter": false
   },
   {
     "id": "google",
     "name": "Google+",
-    "text": "Share"
+    "text": "Share",
+    "counter": false
   }
 ]
