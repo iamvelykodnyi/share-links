@@ -1,4 +1,4 @@
-const shareOptions = require('./share-options');
+import shareOptions from './share-options';
 
 module.exports = function(socialMediaName) {
   let options = shareOptions[socialMediaName];

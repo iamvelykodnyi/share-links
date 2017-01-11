@@ -66,53 +66,57 @@
     line-height: 1;
   }
 
-  &__counter {
-    display: inline-flex;
-    position: relative;
-    margin-left: ($gutter / 1.5);
-    padding: 0 ($gutter / 2);
-    border: 1px solid;
-    border-radius: $radius;
+  // &__counter {
+  //   display: inline-flex;
+  //   position: relative;
+  //   margin-left: ($gutter / 1.5);
+  //   padding: 0 ($gutter / 2);
+  //   border: 1px solid;
+  //   border-radius: $radius;
 
-    &::before,
-    &::after {
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 100%;
-      width: 0;
-      height: 0;
-      margin-top: -6px;
-      border: 6px solid;
-      content: '';
-    }
+  //   &::before,
+  //   &::after {
+  //     display: block;
+  //     position: absolute;
+  //     top: 50%;
+  //     right: 100%;
+  //     width: 0;
+  //     height: 0;
+  //     margin-top: -6px;
+  //     border: 6px solid;
+  //     content: '';
+  //   }
 
-    &::before {
-      margin-right: 0;
-      border-color: transparent;
-    }
+  //   &::before {
+  //     margin-right: 0;
+  //     border-color: transparent;
+  //   }
 
-    &::after {
-      margin-right: -1px;
-      border-color: transparent;
-    }
+  //   &::after {
+  //     margin-right: -1px;
+  //     border-color: transparent $color-bg transparent transparent;
+  //   }
 
-    &_facebook {
-      color: $color-facebook;
+  //   &_facebook {
+  //     color: $color-facebook;
 
-      &::before {
-        border-right-color: $color-facebook;
-      }
+  //     &::before {
+  //       border-right-color: $color-facebook;
+  //     }
+  //   }
 
-      &::after {
-        border-right-color: $color-bg;
-      }
-    }
+  //   &_vkontakte {
+  //     color: $color-vkontakte;
 
-  }
+  //     &::before {
+  //       border-right-color: $color-vkontakte;
+  //     }
+  //   }
 
-  &__number {
-    display: block;
-    margin: auto;
-  }
+  // }
+
+  // &__number {
+  //   display: block;
+  //   margin: auto;
+  // }
 }

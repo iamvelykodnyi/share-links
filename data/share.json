@@ -9,13 +9,13 @@
     "id": "facebook",
     "name": "Facebook",
     "text": "Share",
-    "counter": true
+    "counter": false
   },
   {
     "id": "vkontakte",
     "name": "Vkontakte",
     "text": "Save",
-    "counter": false
+    "counter": true
   },
   {
     "id": "linkedin",

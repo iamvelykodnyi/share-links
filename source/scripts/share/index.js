@@ -1,10 +1,10 @@
 import shareWindow from './share-window';
-import counter from './share-counter';
-import pageParams from './page-params';
+// import counter from './share-counter';
+// import pageParams from './page-params';
 
-let url = pageParams.url();
+// let url = pageParams.url();
 let shareLinks = Array.from(document.getElementsByClassName('js-share-link'));
-let shareNumbers = Array.from(document.getElementsByClassName('js-share-number'));
+// let shareNumbers = Array.from(document.getElementsByClassName('js-share-number'));
 // let numbers = {};
 
 let handleOpenShareWindow = event => {
@@ -20,12 +20,13 @@ shareLinks.forEach(element => {
 });
 
 // Set counters.
-shareNumbers.forEach(element => {
-  // numbers[element.dataset.id] = element;
-  counter
-    .facebook(url)
-    .then(
-      count => element.textContent = count,
-      error => window.console.error(error)
-    );
-});
+// shareNumbers.forEach(element => {
+//   // ID of Social Media.
+//   let id = element.dataset.id;
+//   // numbers[element.dataset.id] = element;
+//   counter[id](url)
+//     .then(
+//       count => element.textContent = count,
+//       error => window.console.error(error)
+//     );
+// });
