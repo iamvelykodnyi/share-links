@@ -1,6 +1,6 @@
 {
   "name": "share-links",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Customized sharing links",
   "main": "index.js",
   "scripts": {
@@ -15,14 +15,14 @@
   "keywords": [],
   "author": {
     "name": "Sergii Velykodnyi",
-    "email": "sergii.velykodnyi@gmail.com",
+    "email": "iamvelykodnyi@gmail.com",
     "url": "http://sergii.velykodnyi.com"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iamvelykodnyi/share-links/issues"
   },
-  "homepage": "https://github.com/iamvelykodnyi/share-links#readme",
+  "homepage": "https://iamvelykodnyi.github.io/share-links/",
   "devDependencies": {
     "autoprefixer": "^6.5.4",
     "babel-core": "^6.20.0",
